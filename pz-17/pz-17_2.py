@@ -22,11 +22,11 @@ window.resizable(False, False)
 
 # Надпись для ввода
 cm_label = tk.Label(window, text="Введите расстояние в см:")
-cm_label.pack()
+cm_label.pack(pady=10)
 
 # Поле ввода
 cm_entry = tk.Entry(window)
-cm_entry.pack()
+cm_entry.pack(pady=10)
 
 # Кнопка конвертации
 convert_button = tk.Button(window, text="Конвертировать", command=convert_cm_to_meters)
@@ -34,6 +34,6 @@ convert_button.pack()
 
 # Метка для вывода результата
 result_label = tk.Label(window, text="")
-result_label.pack()
+result_label.pack(pady=10)
 
 window.mainloop()
