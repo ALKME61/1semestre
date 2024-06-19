@@ -1,29 +1,17 @@
 # Если в матрице имеются положительные элементы, то вывести TRUE, иначе FALSE
 
-def process_matrix(matrix):
-  evenElements = [
-      element for row in matrix for element in row
-      if element > 0 and element % 2 == 0
-  ]
+def has_positive_elements(matrix):
+  for row in matrix:
+    for element in row:
+      if element > 0:
+        return True
 
-  sumElements = sum(evenElements)
-  average = sumElements / len(evenElements) if evenElements else 0
-
-  return evenElements, sumElements, average
+  return False
 
 
 # Пример использования
-matrix = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9, 10, 11, 12],
-]
+matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrix2 = [[0, 0, 0], [-1, -2, -3], [-4, -5, -6]]
 
-for i in matrix:
-  print(i)
-
-evenElements, sumElements, average = process_matrix(matrix)
-
-print("Положительные четные элементы:", evenElements)
-print("Сумма:", sumElements)
-print("Среднее арифметическое:", average)
+print(has_positive_elements(matrix1))
+print(has_positive_elements(matrix2))
